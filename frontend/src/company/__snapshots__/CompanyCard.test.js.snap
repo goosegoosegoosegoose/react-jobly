@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<DocumentFragment>
+  <a
+    href="/companies/undefined"
+  >
+    <h5 />
+    <p />
+    <img />
+  </a>
+</DocumentFragment>
+`;

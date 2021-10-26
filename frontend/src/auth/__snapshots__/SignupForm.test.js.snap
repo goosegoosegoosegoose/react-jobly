@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      Sign Up
+    </h2>
+    <form>
+      <label
+        for="username"
+      >
+        Username
+      </label>
+      <input
+        name="username"
+        type="text"
+        value=""
+      />
+      <label
+        for="password"
+      >
+        Password
+      </label>
+      <input
+        name="password"
+        type="text"
+        value=""
+      />
+      <label
+        for="firstName"
+      >
+        First name
+      </label>
+      <input
+        name="firstName"
+        type="text"
+        value=""
+      />
+      <label
+        for="lastName"
+      >
+        Last name
+      </label>
+      <input
+        name="lastName"
+        type="text"
+        value=""
+      />
+      <label
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        type="text"
+        value=""
+      />
+      <button>
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
