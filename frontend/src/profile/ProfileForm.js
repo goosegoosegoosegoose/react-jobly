@@ -11,8 +11,6 @@ const ProfileForm = ({edit}) => {
   };
   const [formData, setFormData] = useState(INITIAL_STATE);
 
-  console.log(currentUser);
-
   const handleChange = evt => {
     const { name, value } = evt.target;
     setFormData(fData => ({

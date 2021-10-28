@@ -7,6 +7,7 @@ import LoginForm from "../auth/LoginForm";
 import SignupForm from "../auth/SignupForm";
 import JobList from "../jobs/JobList";
 import ProfileForm from "../profile/ProfileForm";
+import Homepage from "../Homepage";
 
 
 const Routes = ({login, logout, signup, loggedIn, edit, apply}) => {
@@ -40,7 +41,7 @@ const Routes = ({login, logout, signup, loggedIn, edit, apply}) => {
       </Route>
       <Switch>
         <Route exact path="/">
-          <p>h</p>
+          <Homepage />
         </Route>
         <Route exact path="/companies">
           <CompanyList />

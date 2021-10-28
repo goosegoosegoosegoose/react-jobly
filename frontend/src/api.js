@@ -12,7 +12,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 class JoblyApi {
   // the token for interactive with the API will be stored here.
-  static token;
+  static token = localStorage.getItem("token");
 
   static async request(endpoint, data = {}, method = "get") {
     console.debug("API Call:", endpoint, data, method);
@@ -75,8 +75,10 @@ class JoblyApi {
     return res.applied;
   }
 
-}
+  static refreshToken() {
+    this.token = localStorage.getItem("token");
+  }
 
-JoblyApi.token = localStorage.getItem("token");
+}
 
 export default JoblyApi;

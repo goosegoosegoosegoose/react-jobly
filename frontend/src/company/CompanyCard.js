@@ -1,11 +1,10 @@
 import React from "react";
 
-const CompanyCard = ({handle, name, description, logoUrl}) => {
+const CompanyCard = ({handle, name, description}) => {
   return(
     <a href={`/companies/${handle}`}>
       <h5>{name}</h5>
       <p>{description}</p>
-      <img src={logoUrl} alt={logoUrl} />
     </a>
   )
 }

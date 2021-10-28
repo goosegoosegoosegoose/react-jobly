@@ -36,7 +36,6 @@ const CompanyList = () => {
           handle={company.handle}
           name={company.name}
           description={company.description}
-          logoUrl={company.logoUrl}
         />
       )}
     </div>

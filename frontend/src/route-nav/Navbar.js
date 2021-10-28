@@ -1,14 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import UserContext from "../auth/userContext";
 
 const Navbar = ({logout, loggedIn}) => {
   const currentUser = useContext(UserContext);
-  const [user, setUser] = useState(currentUser);
-
-  useEffect(() => {
-    setUser(currentUser);
-  }, [currentUser])
 
   if (!loggedIn) {
     return (

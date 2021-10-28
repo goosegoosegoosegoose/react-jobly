@@ -25,6 +25,7 @@ function App() {
     const res = await JoblyApi.login(data);
     localStorage.setItem("username", data.username);
     localStorage.setItem("token", res.token);
+    JoblyApi.refreshToken();
     setToken(res.token);
     setUsername(data.username);
     setLoggedIn(true);
@@ -33,32 +34,33 @@ function App() {
   const logout = () => {
     localStorage.setItem("token", "null");
     localStorage.setItem("username", "null");
+    JoblyApi.refreshToken();
     setToken("null");
     setCurrentUser({});
     setUsername("null");
     setLoggedIn(false);
-  }
+  };
 
   const signup = async (data) => {
     const res = await JoblyApi.register(data);
     localStorage.setItem("username", data.username);
     localStorage.setItem("token", res.token);
+    JoblyApi.refreshToken();
     setToken(res.token);
     setUsername(data.username);
     setLoggedIn(true);
-  }
+  };
 
   const edit = async (edit) => {
     const res = await JoblyApi.profileEdit(edit, currentUser.username)
     setCurrentUser({...currentUser, ...res});
-  }
+  };
 
   const apply = async (evt) => {
     const id = evt.target.id;
     const res = await JoblyApi.applyForJob(currentUser.username, id)
     setCurrentUser({...currentUser, applications: [...currentUser.applications, res]})
-  }
-  console.log(currentUser);
+  };
 
   return (
     <BrowserRouter>
