@@ -8,7 +8,7 @@ const Homepage = () => {
 
   if (!user) {
     return (
-      <div>
+      <div className="container text-center">
         <h1><b>Jobly</b></h1>
         <p>All the jobs in one, convenient place.</p><br/>
         <button onClick={history.push("/login")}>Log in</button>
@@ -18,10 +18,10 @@ const Homepage = () => {
   };
 
   return (
-    <div>
+    <div className="container text-center">
       <h1><b>Jobly</b></h1>
-      <p>All the jobs in one, convenient place.</p><br/>
-      <h2><b>Welcome Back, {user.username}</b></h2>
+      <p className="lead">All the jobs in one, convenient place.</p>
+      <h2>Welcome Back, {user.username}</h2>
     </div>
   )
 }

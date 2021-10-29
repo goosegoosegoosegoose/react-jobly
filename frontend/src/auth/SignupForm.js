@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Form, Button } from "react-bootstrap"
 
 const SignupForm = ({signup}) => {
   const INITIAL_STATE = {
@@ -28,21 +29,31 @@ const SignupForm = ({signup}) => {
   };
 
   return (
-    <div>
+    <div className="my-2 mx-2">
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" value={formData.username} onChange={handleChange}></input>
-        <label htmlFor="password">Password</label>
-        <input type="text" name="password" value={formData.password} onChange={handleChange}></input>
-        <label htmlFor="firstName">First name</label>
-        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange}></input>
-        <label htmlFor="lastName">Last name</label>
-        <input type="text" name="lastName" value={formData.lastName} onChange={handleChange}></input>
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" value={formData.email} onChange={handleChange}></input>
-        <button>Submit</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Control type="text" name="username" value={formData.username} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">  
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Control type="text" name="password" value={formData.password} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">   
+          <Form.Label htmlFor="firstName">First name</Form.Label>
+          <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">          
+          <Form.Label htmlFor="lastName">Last name</Form.Label>
+          <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Control type="text" name="email" value={formData.email} onChange={handleChange} />
+        </Form.Group>
+        <Button type="submit" variant="primary">Submit</Button>
+      </Form>
     </div>
   )
 }

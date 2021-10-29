@@ -20,7 +20,7 @@ const JobList = ({apply}) => {
 
   if (jobs.length === 0) {
     return (
-      <div>
+      <div className="container text-center">
         <SearchForm type="jobs" header="title" get={getJobs} />
         <p>Sorry, no results were found!</p>
       </div>
@@ -28,7 +28,7 @@ const JobList = ({apply}) => {
   };
 
   return (
-    <div>
+    <div className="container text-center">
       <SearchForm type="jobs" header="title" get={getJobs} />
       {jobs.map(job => {
         return <JobCard 

@@ -1,5 +1,6 @@
 import React, {useState } from "react";
 import JoblyApi from "../api";
+import { Button, Row } from "react-bootstrap"
 
 const SearchForm = ({ type, header, get }) => {
   const [formData, setFormData] = useState("")
@@ -22,12 +23,17 @@ const SearchForm = ({ type, header, get }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-        value={formData}
-        placeholder="Enter search term.."
-        onChange={handleChange}
-      />
-      <button>Submit</button>
+      <Row>
+        <div className="input-group col-2">
+          <input
+            className="form-control"
+            value={formData}
+            placeholder="Enter search term.."
+            onChange={handleChange}
+          />
+          <Button variant="primary" size="sm">Submit</Button>
+        </div>
+      </Row>
     </form>
   )
 }

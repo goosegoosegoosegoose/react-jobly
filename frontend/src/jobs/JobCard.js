@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserContext from "../auth/userContext";
+import { Button, Card } from "react-bootstrap"
 
 const JobCard = ({title, salary, equity, apply, id}) => {
   const currentUser = useContext(UserContext);
@@ -9,12 +10,14 @@ const JobCard = ({title, salary, equity, apply, id}) => {
   }
    
   return (
-    <div>
-      <h6>{title}</h6>
-      <small>Salary: {salary}</small><br />
-      <small>Equity: {equity}</small><br />
-      {exists ? <button disabled>Applied</button> : <button id={id} onClick={apply}>Apply</button>}
-    </div>
+    <Card className="my-3" style={{width: '70vw'}}>
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>Salary: {salary}</Card.Text>
+        <Card.Text>Equity: {equity}</Card.Text>
+        {exists ? <Button variant="danger" size="sm" disabled>Applied</Button> : <Button id={id} variant="primary" size="sm" onClick={apply}>Apply</Button>}
+      </Card.Body>
+    </Card>
   )
 }
 

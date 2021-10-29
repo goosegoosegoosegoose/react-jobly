@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../auth/userContext";
+import { Form, Button } from "react-bootstrap"
+
 
 const ProfileForm = ({edit}) => {
   const currentUser = useContext(UserContext);
@@ -20,27 +22,45 @@ const ProfileForm = ({edit}) => {
   };
 
   const handleSubmit = evt => {
-    evt.preventDefault();
-    edit({...formData});
-    setFormData(INITIAL_STATE);
+    const e = false;
+    try {
+      evt.preventDefault();
+      edit({...formData});
+      setFormData(INITIAL_STATE);
+    } catch(err) {
+      console.log(e)
+      e = true;
+      return;
+    };
   };
 
+
   return (
-    <div>
+    <div className="my-2 mx-2">
       <h2>Profile</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <p>{currentUser.username}</p>
-        <label htmlFor="firstName">First Name</label><br />
-        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} /><br />
-        <label htmlFor="lastName">Last Name</label><br />
-        <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} /><br />
-        <label htmlFor="email">Email</label><br />
-        <input type="text" name="email" value={formData.email} onChange={handleChange} /><br />
-        <label htmlFor="password">Confirm password to make changes:</label><br />
-        <input type="text" name="password" value={formData.password} onChange={handleChange} /><br />
-        <button>Save Changes</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="my-4">
+          <Form.Label>Username</Form.Label>
+          <p><b>{currentUser.username}</b></p>
+        </Form.Group>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="firstName">First Name</Form.Label>
+          <Form.Control type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="lastName">Last Name</Form.Label>
+          <Form.Control type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Control type="text" name="email" value={formData.email} onChange={handleChange} />
+        </Form.Group>
+        <Form.Group className="my-4">
+          <Form.Label htmlFor="password">Confirm password to make changes:</Form.Label>
+          <Form.Control type="password" name="password" value={formData.password} onChange={handleChange} />
+        </Form.Group>
+        <Button type="submit" variant="primary">Save Changes</Button>
+      </Form>
     </div>
   )
 }

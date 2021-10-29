@@ -20,7 +20,7 @@ const CompanyList = () => {
 
   if (companies.length === 0) {
     return (
-      <div>
+      <div className="container text-center">
         <SearchForm type="companies" header="name" get={getCompanies} />
         <p>Sorry, no results were found!</p>
       </div>
@@ -28,7 +28,7 @@ const CompanyList = () => {
   };
 
   return (
-    <div>
+    <div className="container text-center">
       <SearchForm type="companies" header="name" get={getCompanies} />
       {companies.map(company => 
         <CompanyCard

@@ -23,9 +23,10 @@ const CompanyDetail = ({apply}) => {
   }
 
   return (
-    <div>
+    <div className="mx-2">
       <h4>{company.name}</h4>
       <p>{company.description}</p>
+      <div className="container text-center">
         {company.jobs.map((job) => {
           return <JobCard 
             key={job.id}
@@ -35,6 +36,7 @@ const CompanyDetail = ({apply}) => {
             equity={job.equity}
             apply={apply}
           />})}
+        </div>
     </div>
   )
 }

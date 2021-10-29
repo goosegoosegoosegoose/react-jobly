@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from './route-nav/Routes';
 import JoblyApi from "./api";
 import UserContext from "./auth/userContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
